@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class TambahActivity extends AppCompatActivity {
     private EditText etNama, etAlamat, etJam;
@@ -40,7 +41,16 @@ public class TambahActivity extends AppCompatActivity {
                     etJam.setError("Jam Tidak Boleh Kosong");
                 }
                 else{
-                    
+                    MyDatabaseHelper myDB = new MyDatabaseHelper(TambahActivity.this);
+                    long eks = myDB.tambahData(nama, alamat, jam);
+
+                    if(eks == -1){
+                        Toast.makeText(TambahActivity.this, "Tambah Data Gagal!", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        Toast.makeText(TambahActivity.this, "Tambah Data Sukses!", Toast.LENGTH_SHORT).show();
+                        finish();
+                    }
                 }
             }
         });
