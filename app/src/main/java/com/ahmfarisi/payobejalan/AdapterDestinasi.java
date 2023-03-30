@@ -15,10 +15,11 @@ import java.util.ArrayList;
 
 public class AdapterDestinasi extends RecyclerView.Adapter<AdapterDestinasi.ViewHolderDestinasi>{
     private Context ctx;
-    private ArrayList arrNama, arrAlamat, arrJam;
+    private ArrayList arrId, arrNama, arrAlamat, arrJam;
 
-    public AdapterDestinasi(Context ctx, ArrayList arrNama, ArrayList arrAlamat, ArrayList arrJam) {
+    public AdapterDestinasi(Context ctx, ArrayList arrId, ArrayList arrNama, ArrayList arrAlamat, ArrayList arrJam) {
         this.ctx = ctx;
+        this.arrId = arrId;
         this.arrNama = arrNama;
         this.arrAlamat = arrAlamat;
         this.arrJam = arrJam;
@@ -44,10 +45,11 @@ public class AdapterDestinasi extends RecyclerView.Adapter<AdapterDestinasi.View
     }
 
     public class ViewHolderDestinasi extends RecyclerView.ViewHolder {
-        TextView tvNama, tvAlamat, tvJam;
+        TextView tvId, tvNama, tvAlamat, tvJam;
 
         public ViewHolderDestinasi(@NonNull View itemView) {
             super(itemView);
+            tvId = itemView.findViewById(R.id.tv_id);
             tvNama = itemView.findViewById(R.id.tv_nama);
             tvAlamat = itemView.findViewById(R.id.tv_alamat);
             tvJam = itemView.findViewById(R.id.tv_jam);
@@ -70,7 +72,7 @@ public class AdapterDestinasi extends RecyclerView.Adapter<AdapterDestinasi.View
                     pesan.setNegativeButton("Hapus", new DialogInterface.OnClickListener() {
                         @Override
                         public void onClick(DialogInterface dialog, int which) {
-                            
+
                         }
                     });
 
