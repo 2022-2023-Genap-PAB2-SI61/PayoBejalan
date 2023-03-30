@@ -1,6 +1,7 @@
 package com.ahmfarisi.payobejalan;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,21 @@ public class AdapterDestinasi extends RecyclerView.Adapter<AdapterDestinasi.View
                     pesan.setTitle("Perhatian");
                     pesan.setMessage("Perintah Apa yang Akan Dilakukan?");
                     pesan.setCancelable(true);
+
+                    pesan.setPositiveButton("Ubah", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    });
+
+                    pesan.setNegativeButton("Hapus", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            
+                        }
+                    });
+
                     pesan.show();
                     return false;
                 }
