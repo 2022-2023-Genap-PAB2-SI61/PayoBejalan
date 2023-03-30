@@ -92,5 +92,5 @@ public class MyDatabaseHelper extends SQLiteOpenHelper {
         long eksekusi = db.delete(TABLE_NAME, "id = ?", new String[]{id});
         return eksekusi;
     }
-    
+
 }
