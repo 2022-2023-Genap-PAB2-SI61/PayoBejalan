@@ -23,5 +23,13 @@ public class UbahActivity extends AppCompatActivity {
         btnUbah = findViewById(R.id.btn_ubah);
 
         Intent terima = getIntent();
+        yId = terima.getStringExtra("xId");
+        yNama = terima.getStringExtra("xNama");
+        yAlamat = terima.getStringExtra("xAlamat");
+        yJam = terima.getStringExtra("xJam");
+
+        etNama.setText(yNama);
+        etAlamat.setText(yAlamat);
+        etJam.setText(yJam);
     }
 }
